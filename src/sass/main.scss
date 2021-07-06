@@ -1,0 +1,117 @@
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+  background-color: #fff;
+  color: #212121;
+}
+
+#root {
+  #search-form {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    input {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      padding: 3px;
+    }
+    button {
+      font-size: 20px;
+      padding: 3px;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+    list-style: none;
+    flex-basis: calc((100% - 45px) / 3);
+
+    .item {
+      margin-left: 30px;
+      margin-top: 30px;
+      flex-basis: calc((100% - 90px) / 3);
+
+      .stats {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-item {
+          margin-left: 10px;
+          margin-top: 10px;
+          flex-basis: calc((100% - 40px) / 4);
+          display: flex;
+          align-items: center;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .image:hover {
+      transform: scale(1.03);
+    }
+
+    .image {
+      width: 100%;
+      object-fit: cover;
+      transition: transform var(--animation-duration) var(--timing-function);
+    }
+  }
+}
+
+button {
+  display: block;
+}
+
+button.btn-service.is-hidden {
+  display: none;
+}
+
+button.btn-service > .spinner-grow.is-hidden {
+  display: none;
+}
+
+.mdc-btn {
+  min-width: 88px;
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  outline: 0;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #00796b;
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(#414141, 0.3);
+  &:hover {
+    background-color: #004c40;
+  }
+  &:active {
+    box-shadow: 0 6px 4px 0 rgba(#414141, 0.3);
+  }
+}
